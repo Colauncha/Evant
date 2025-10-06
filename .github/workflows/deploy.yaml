@@ -33,4 +33,4 @@ jobs:
             sudo rm -rf /var/www/html/*
             sudo cp -r dist/* /var/www/html/
 
-          shell: bash -l
+          # shell: bash -l {0}
