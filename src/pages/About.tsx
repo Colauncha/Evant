@@ -1,5 +1,6 @@
 import { Users, Target, Award, Lightbulb } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import CeoImage from "/public/Sola.jpg";
 
 const About = () => {
   const values = [
@@ -100,16 +101,16 @@ const About = () => {
           <div className="max-w-2xl mx-auto">
             <Card className="border-0 bg-gradient-card shadow-card">
               <CardHeader>
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users className="h-12 w-12 text-white" />
+                <div className="w-40 h-40 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <img src={CeoImage} alt="Oluwasola Akano" className="w-40 h-40 rounded-full object-cover" />
                 </div>
-                <CardTitle className="text-2xl">Boluwatife Ajibola</CardTitle>
+                <CardTitle className="text-2xl">Oluwasola Akano</CardTitle>
                 <CardDescription className="text-lg">Founder & CEO</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
                   A visionary entrepreneur passionate about sustainable technology and clean energy solutions. 
-                  Boluwatife recognized the need for accessible EV charging infrastructure in Nigeria and 
+                  He recognized the need for accessible EV charging infrastructure in Nigeria and 
                   created EVANT to democratize electric vehicle adoption across the country.
                 </p>
               </CardContent>

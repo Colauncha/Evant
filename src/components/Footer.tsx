@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import EvantLogo from "/public/evant-logo.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,12 +12,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="bg-gradient-to-br from-primary to-secondary p-2 rounded-lg">
-                <Zap className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                EVANT
-              </span>
+              <img src={EvantLogo} alt="EVANT Logo" className="h-28 w-auto" />
             </div>
             <p className="text-muted-foreground text-sm">
               Revolutionizing EV charging in Nigeria with smart marketplace solutions.
@@ -71,7 +67,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>+234 (0) 123 456 7890</span>
+                <span>+234 708 4274 918</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
