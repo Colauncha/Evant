@@ -62,7 +62,7 @@ const Navbar = () => {
   const handleGetStartedClick = () => {
     setIsAnimating(true);
     setTimeout(() => {
-      navigate("/service");
+      navigate("/login");
       setIsAnimating(false);
     }, 300);
   };
