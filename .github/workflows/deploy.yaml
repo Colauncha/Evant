@@ -1,0 +1,34 @@
+name: Deploy Evant frontend to AWS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy via ssh
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EVANT_AWS_HOST }}
+          username: ${{ secrets.EVANT_AWS_USER }}
+          key: ${{ secrets.EVANT_AWS_KEY }}
+          script: |
+            cd /var/www/evant/Evant || exit 1
+            git reset --hard HEAD
+            git clean -fd
+            git pull --ff-only origin main
+            
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            
+            npm install
+            npm run build
+            sudo rm -rf /var/www/html/*
+            sudo cp -r dist/* /var/www/html/
